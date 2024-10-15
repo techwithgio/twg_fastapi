@@ -14,4 +14,9 @@ pip install -r requirement.txt
 ```
 JWT_SECRET=
 JWT_ALGORITHM=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_SERVER=
 ```
