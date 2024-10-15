@@ -1,0 +1,30 @@
+version: "3.8"
+name: fastapi-auth
+services:
+  app:
+    # image: <image_name>
+    build: .
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    # restart: always
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  # Adding a database service (PostgreSQL)
+  db:
+    image: postgres:latest
+    container_name: auth-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:

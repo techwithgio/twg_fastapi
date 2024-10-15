@@ -8,7 +8,6 @@ from app.db.schema.user import UserOutput
 @asynccontextmanager
 async def lifespan(app : FastAPI):
     # Intializes the db tables when the application starts up
-    print("Created")
     create_tables()
     yield 
 
